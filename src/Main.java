@@ -17,8 +17,22 @@ public class Main {
         mentoria1.setDescricao("descricao metoria 1");
         mentoria1.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(mentoria1);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("bootcamp 1");
+        bootcamp.setDescricao("descricao bootcamp 1");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(mentoria1);
+
+        System.out.println(bootcamp.getNome());
+
+        Dev dev1 = new Dev();
+        dev1.setNome("dev 1");
+        dev1.inscreverBootcamp(bootcamp);
+        dev1.progredir();
+        dev1.progredir();
+        System.out.println(dev1.getConteudosInscritos());
+        System.out.println(dev1.getConteudosConcluidos());
+        System.out.println(dev1.calcularTotalXp());
 
     }
 
